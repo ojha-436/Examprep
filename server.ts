@@ -214,11 +214,11 @@ Leverage Google Search to verify recent ${exam} question trends and top YouTube 
   }
 });
 
-// POST /api/quiz - Generate 5 High-Yield Diagnostic Multiple Choice Questions
-app.post('/api/quiz', rateLimiter, async (req, res) => {
+// POST /api/quiz or /api/generate-quiz - Generate 5 High-Yield Diagnostic Multiple Choice Questions
+app.post(['/api/quiz', '/api/generate-quiz'], rateLimiter, async (req, res) => {
   try {
-    const rawExam = req.body.exam;
-    const rawTopic = req.body.topic;
+    const rawExam = req.body.exam || req.body.examName;
+    const rawTopic = req.body.topic || req.body.topicName;
     const exam = sanitizeInput(rawExam, 80);
     const topic = sanitizeInput(rawTopic, 120);
 
@@ -374,17 +374,15 @@ Synthesize a comprehensive PYQ pattern analysis and generate ${questionCount} au
     // Construct contents (multimodal if file provided, text otherwise)
     let contentsPayload: any;
     if (fileBase64) {
-      contentsPayload = {
-        parts: [
-          {
-            inlineData: {
-              data: fileBase64,
-              mimeType: fileMimeType,
-            },
+      contentsPayload = [
+        {
+          inlineData: {
+            data: fileBase64,
+            mimeType: fileMimeType,
           },
-          { text: promptText },
-        ],
-      };
+        },
+        { text: promptText },
+      ];
     } else {
       contentsPayload = promptText;
     }
