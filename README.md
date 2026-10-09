@@ -6,7 +6,12 @@
 [![React 19](https://img.shields.io/badge/React_19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Gemini 3.8 Flash](https://img.shields.io/badge/Google_Gemini-3.8_Flash-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+[![Google Cloud Run](https://img.shields.io/badge/Google_Cloud-Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://examprep-ai-823065407403.asia-south1.run.app)
 [![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+
+### 🌐 Live Production URL
+**[https://examprep-ai-823065407403.asia-south1.run.app](https://examprep-ai-823065407403.asia-south1.run.app)**  
+*Deployed on Google Cloud Run in `asia-south1` (Mumbai) with auto-scaling and zero cold-start optimization.*
 
 ---
 
@@ -116,6 +121,32 @@ Every generated topic is constructed through a rigid pedagogical framework:
 * **Zero Leakage:** All secrets, `.env`, `.env.*`, and sensitive keys are strictly excluded via `.gitignore`.
 * **Rate Limiting:** Built-in sliding-window in-memory rate limiter (25 requests/min per IP) protects API quotas.
 * **Prompt Injection Defense:** Strict input sanitizers prevent system prompt overrides and control character exploits.
+
+---
+
+## ☁️ Google Cloud Deployment (Cloud Run)
+
+The application includes a production-ready container configuration for Google Cloud Run:
+
+```bash
+# 1. Authenticate with Google Cloud
+gcloud auth login
+gcloud config set project promptwar-501405
+
+# 2. Deploy to Cloud Run from source
+gcloud run deploy examprep-ai \
+  --source . \
+  --region asia-south1 \
+  --platform managed \
+  --allow-unauthenticated \
+  --memory 1Gi \
+  --cpu 1 \
+  --timeout 300 \
+  --set-env-vars "GEMINI_API_KEY=YOUR_GEMINI_API_KEY,NODE_ENV=production"
+```
+
+* **Live Service URL:** [https://examprep-ai-823065407403.asia-south1.run.app](https://examprep-ai-823065407403.asia-south1.run.app)
+* **GCP Region:** `asia-south1` (Mumbai)
 
 ---
 
