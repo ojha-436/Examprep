@@ -1,0 +1,6 @@
+{
+  "name": "ExamPrep AI - High-Yield Revision & Cheat-Sheet Engine",
+  "description": "Government competitive exam revision engine for RRB JE, RRB ALP, SSC JE, and SSC CHSL. Generates 4-pillar cheat sheets, Word (.docx) export, and simulated CBT practice tests from uploaded Previous Year Questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

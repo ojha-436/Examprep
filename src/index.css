@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #FDFBF7;
+    color: #0F172A;
+  }
+}
+
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.tactile-card {
+  border: 2px solid #0F172A;
+  box-shadow: 4px 4px 0px 0px #0F172A;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+.tactile-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #0F172A;
+}
+.tactile-button {
+  border: 2px solid #0F172A;
+  box-shadow: 3px 3px 0px 0px #0F172A;
+  transition: all 0.1s ease-in-out;
+}
+.tactile-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px 0px 0px #0F172A;
+}
+
+/* KaTeX custom sizing and wrapping */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+  margin: 0.75rem 0 !important;
+}
+
+.katex {
+  font-size: 1.1em;
+  text-rendering: optimizeLegibility;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Print-optimized layout for students printing physical cheat-sheets */
+@media print {
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .cheat-sheet-content {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .cheat-sheet-content h1,
+  .cheat-sheet-content h2,
+  .cheat-sheet-content h3 {
+    color: #0f172a !important;
+  }
+  .cheat-sheet-content a {
+    color: #2563eb !important;
+    text-decoration: underline;
+  }
+  .cheat-sheet-content pre,
+  .cheat-sheet-content code {
+    background: #f1f5f9 !important;
+    color: #0f172a !important;
+    border: 1px solid #cbd5e1 !important;
+  }
+}
