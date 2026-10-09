@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "promptwar-501405"
+  },
+  "targets": {
+    "promptwar-501405": {
+      "hosting": {
+        "examprep-ai-app": [
+          "examprep-ai-app"
+        ],
+        "examprep-ai-engine": [
+          "examprep-ai-engine"
+        ],
+        "examprep-ai-cbt": [
+          "examprep-ai-cbt"
+        ]
+      }
+    }
+  }
+}

@@ -9,9 +9,13 @@
 [![Google Cloud Run](https://img.shields.io/badge/Google_Cloud-Cloud_Run-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://examprep-ai-823065407403.asia-south1.run.app)
 [![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 
-### 🌐 Live Production URL
-**[https://examprep-ai-823065407403.asia-south1.run.app](https://examprep-ai-823065407403.asia-south1.run.app)**  
-*Deployed on Google Cloud Run in `asia-south1` (Mumbai) with auto-scaling and zero cold-start optimization.*
+### 🌐 Live Production URLs
+- **Primary Web App (Clean Domain):** **[https://examprep-ai-app.web.app](https://examprep-ai-app.web.app)**
+- **Alternate Mirror (Clean Domain):** **[https://examprep-ai-engine.web.app](https://examprep-ai-engine.web.app)**
+- **CBT Portal Mirror:** **[https://examprep-ai-cbt.web.app](https://examprep-ai-cbt.web.app)**
+- **Cloud Run Direct Backend:** [https://examprep-ai-823065407403.asia-south1.run.app](https://examprep-ai-823065407403.asia-south1.run.app)
+
+*Deployed on Google Cloud Run + Firebase Hosting CDN in `asia-south1` (Mumbai) with global edge caching and zero cold-start optimization.*
 
 ---
 
